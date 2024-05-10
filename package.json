@@ -1,0 +1,23 @@
+{
+    "name": "mac-kbot",
+    "version": "1.0.0",
+    "description": "League of Legends utility application for macOS",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "keywords": [
+        "Electron",
+        "League of Legends",
+        "macOS"
+    ],
+    "author": "Lul",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.24.0",
+        "lockfile": "^1.0.4"
+    },
+    "devDependencies": {
+        "electron": "^30.0.3"
+    }
+}
