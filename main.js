@@ -1,13 +1,10 @@
-const { app, BrowserWindow, dialog } = require('electron');
+const { app, dialog, BrowserWindow } = require('electron');
 const background = require('./background');
 const riotid = require('./riotid');
 const practice = require('./practice');
 const gui = require('./gui');
 const dodge = require('./dodge');
 const autoaccept = require('./autoaccept');
-
-// Define global variable for the auto-accept button
-let autoAcceptButton = null;
 
 // Function to start the 5v5 practice tool
 function startPracticeTool() {
@@ -48,18 +45,13 @@ async function changeBackground() {
                 <body>
                     <h1>Skins for ${selectedChampion}</h1>
                     <ul>
-                        ${champSkins[selectedChampion].map(skin => `<li><button onclick="setBackground('${selectedChampion}', '${skin.id}')">${skin.name}</button></li>`).join('')}
+                        ${champSkins[selectedChampion].map(skin => `<li><button onclick="window.api.setBackground('${selectedChampion}', '${skin.id}')">${skin.name}</button></li>`).join('')}
                     </ul>
                 </body>
             </html>`);
     } catch (error) {
         dialog.showErrorBox("Error", error.message);
     }
-}
-
-// Function to set the background using the selected skin
-function setBackground(championName, selectedSkinId) {
-    background.changeBackgroundSkin(selectedSkinId);
 }
 
 // Function to change the Riot ID (nickname)

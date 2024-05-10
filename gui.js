@@ -10,7 +10,8 @@ function createMainGui(startBackgroundChange, startRiotIdChange, startPracticeTo
         width: 600,
         height: 400,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js') // Add this line
         }
     });
 
