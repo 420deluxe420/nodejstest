@@ -6,7 +6,7 @@ const url = require('url');
 
 function createMainGui(startBackgroundChange, startRiotIdChange, startPracticeTool, startDodgeLobby, toggleAutoAccept) {
     // Create the browser window
-    const mainWindow = new BrowserWindow({
+    let mainWindow = new BrowserWindow({
         width: 600,
         height: 400,
         webPreferences: {
